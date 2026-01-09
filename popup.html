@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+    body {
+      width: 280px;
+      background-color: #000;
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    
+    .header h3 {
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      margin: 0 0 24px 0;
+      color: #f5f5f7;
+    }
+    
+    .header span { font-weight: 600; color: #007aff; } 
+
+
+    .glass-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+    .input-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #86868b;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    input {
+      width: 80%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #333;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 600;
+      text-align: center;
+      padding: 5px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #007aff;
+    }
+
+
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    #startBtn {
+      background-color: #007aff;
+      color: white;
+    }
+
+    #startBtn:hover {
+      background-color: #0051af;
+      transform: scale(1.02);
+    }
+
+    #stopBtn {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ff3b30;
+    }
+
+    #stopBtn:hover {
+      background-color: rgba(255, 59, 48, 0.15);
+    }
+
+
+    .status-footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #86868b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #333;
+      transition: all 0.3s ease;
+    }
+
+    .active-mode {
+      background: #34c759;
+      box-shadow: 0 0 10px rgba(52, 199, 89, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h3>Kingo<span>R</span></h3>
+  </div>
+
+  <div class="glass-box">
+    <div class="input-container">
+      <label>Yenileme Aralığı (sn)</label>
+      <input type="number" id="secondInput" placeholder="00" min="1">
+    </div>
+
+    <div class="button-stack">
+      <button id="startBtn">Başlat</button>
+      <button id="stopBtn">Durdur</button>
+    </div>
+  </div>
+
+  <div class="status-footer">
+    <div id="statusDot" class="indicator"></div>
+    <span id="statusText">Sistem Hazır</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
